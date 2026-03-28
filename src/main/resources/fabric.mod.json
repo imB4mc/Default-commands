@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "default_commands",
+  "version": "${version}",
+  "name": "Default commands",
+  "description": "Runs configurable default commands on world creation and player join, with Mod Menu UI and protected entries.",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "b4.default_commands.client.Default_commandsDataGenerator"
+    ],
+    "client": [
+      "b4.default_commands.client.Default_commandsClient"
+    ],
+    "modmenu": [
+      "b4.default_commands.client.DefaultCommandsModMenu"
+    ],
+    "main": [
+      "b4.default_commands.Default_commands"
+    ]
+  },
+  "mixins": [
+    "default_commands.mixins.json",
+    {
+      "config": "default_commands.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  },
+  "suggests": {
+    "modmenu": "*"
+  }
+}
