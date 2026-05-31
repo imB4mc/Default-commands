@@ -3,7 +3,7 @@
   "id": "default_commands",
   "version": "${version}",
   "name": "Default commands",
-  "description": "Runs configurable default commands on world creation and player join, with Mod Menu UI and protected entries.",
+  "description": "Runs configurable default commands on world creation and player join, or server startup.",
   "authors": [],
   "contact": {},
   "license": "MIT",
