@@ -7,6 +7,7 @@
   "authors": [],
   "contact": {},
   "license": "MIT",
+  "icon": "assets/default_commands/icon.png",
   "environment": "*",
   "entrypoints": {
     "fabric-datagen": [

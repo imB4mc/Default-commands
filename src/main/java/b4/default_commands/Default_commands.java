@@ -30,6 +30,7 @@ public class Default_commands implements ModInitializer {
     @Override
     public void onInitialize() {
         DefaultCommandsConfigManager.getConfig();
+        DefaultCommandsServerCommand.register();
 
         ServerLifecycleEvents.SERVER_STARTED.register(this::handleServerStarted);
         ServerLifecycleEvents.SERVER_STOPPED.register(server -> handleServerStopped());
@@ -41,6 +42,7 @@ public class Default_commands implements ModInitializer {
 
     private void handleServerStarted(MinecraftServer server) {
         pendingJoinCommands.clear();
+        DefaultCommandExecutor.runForTrigger(server, null, CommandTrigger.ON_SERVER_START);
         pendingWorldCreateCommands = isFirstWorldStart(server);
     }
 
